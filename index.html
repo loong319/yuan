@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>新闻狂点</title>
+
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <section class="page">
+      <textarea id="url" class="textarea" placeholder="请输入url"></textarea>
+      <input id="times" class="ipt" type="number" min="0" placeholder="点击次数">
+      <button class="btn" onclick="go()">开始操作</button>
+    </section>
+
+    <script>
+      function go () {
+        var url = document.getElementById('url').value;
+        var times = document.getElementById('times').value;
+        times = Math.floor(Number(times));
+        console.log(url, times)
+        if (!url) {
+          return alert('请输入链接');
+        }
+        if (!times) {
+          return alert('请输入正确的次数');
+        }
+        for (var i = 0; i < times; i++) {
+          window.open(url);
+        }
+      }
+    </script>
+  </body>
+</html>
